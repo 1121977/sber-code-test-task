@@ -20,23 +20,6 @@ import static org.junit.jupiter.api.Assertions.*;
 @Testcontainers
 class ClientDaoJdbcTest {
 
-//    static ClientDaoJdbc clientDaoJdbc;
-
-/*
-    @BeforeAll
-    static void beforeAll() {
-        Properties taskProperties = new Properties();
-        try(InputStream taskPropertiesStream = ClientDaoJdbcTest.class.getClassLoader().getResourceAsStream("task.properties")){
-            taskProperties.load(taskPropertiesStream);
-            String url = taskProperties.getProperty("sql.url");
-            String user = taskProperties.getProperty("sql.user");
-            String password = taskProperties.getProperty("sql.password");
-//            clientDaoJdbc =
-        } catch (IOException err){
-            err.printStackTrace();
-        }
-    }
-*/
 
     @Container
     private final PostgreSQLContainer postgresqlContainer = new PostgreSQLContainer<>("postgres:17")
