@@ -1,2 +1,14 @@
+pluginManagement {// for usage on SberCode platform. Remove this section for local usage.
+    plugins {
+        id 'org.gradle.toolchains.foojay-resolver-convention'  version '0.8.0'
+    }
+    repositories {
+        maven {
+            allowInsecureProtocol = true
+            url = "http://nexus:8081/repository/maven-public/"
+        }
+    }
+}
+
 rootProject.name = 'SberCodeTestTask'
 
