@@ -35,9 +35,9 @@ public class ClientDaoJdbc implements ClientDao {
         List<Client> resultList = new ArrayList<>();
         StringBuilder sqlCommand = new StringBuilder("select id, name from client where name = ").append('\'' + name + '\'');
         try (Connection connection = dataSource.getConnection()) {
-            PreparedStatement preparedStatement = connection.prepareStatement("select id, name from client where name = ?");
-            preparedStatement.setString(1, name);
-//            PreparedStatement preparedStatement = connection.prepareStatement(sqlCommand.toString());
+//            PreparedStatement preparedStatement = connection.prepareStatement("select id, name from client where name = ?");
+//            preparedStatement.setString(1, name);
+            PreparedStatement preparedStatement = connection.prepareStatement(sqlCommand.toString());
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
                 resultList.add(new Client(resultSet.getLong("id"), resultSet.getString("name")));
