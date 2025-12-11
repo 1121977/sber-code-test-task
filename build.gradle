@@ -34,13 +34,13 @@ dependencies {
 }
 
 /*
-// for usage on SberCode
+//for local usage
 test {
     useJUnitPlatform()
 }
 */
 
-//for local usage
+// for usage on SberCode
 test {
     useJUnitPlatform()
     environment "DOCKER_HOST", "unix:///run/user/podman/podman.sock"
