@@ -5,13 +5,15 @@ plugins {
 group = 'ru.securecodereview'
 version = '1.0-SNAPSHOT'
 
-/*  for local usage
+/*
+//  for local usage
 repositories {
     mavenCentral()
 }
 */
 
-repositories { // for usage on SberCode
+// for usage on SberCode
+repositories {
     maven {
         allowInsecureProtocol = true
         url = "http://nexus:8081/repository/maven-public/"
@@ -31,6 +33,16 @@ dependencies {
 
 }
 
+/*
+// for usage on SberCode
 test {
     useJUnitPlatform()
+}
+*/
+
+//for local usage
+test {
+    useJUnitPlatform()
+    environment "DOCKER_HOST", "unix:///run/user/podman/podman.sock"
+    environment "TESTCONTAINERS_RYUK_DISABLED", "true"
 }

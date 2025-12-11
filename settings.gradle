@@ -1,4 +1,5 @@
-pluginManagement {// for usage on SberCode platform. Remove this section for local usage.
+// for usage on SberCode platform. Remove this section for local usage.
+pluginManagement {
     plugins {
         id 'org.gradle.toolchains.foojay-resolver-convention'  version '0.8.0'
     }
